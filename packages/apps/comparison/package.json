@@ -29,7 +29,6 @@
     "webpack-dev-server": "^4.4.0"
   },
   "scripts": {
-    "build": "webpack --mode=production --node-env=production --config ../common/webpack.config.js --name comparison",
-    "start": "webpack serve --config ../common/webpack.config.js --name comparison"
+    "build": "webpack --mode=production --node-env=production --config ../common/webpack.config.js --name comparison"
   }
 }

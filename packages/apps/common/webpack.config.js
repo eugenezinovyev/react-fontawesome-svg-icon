@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const titleCase = input => input.charAt(0).toUpperCase() + input.substr(1).toLowerCase();
 
@@ -13,6 +14,13 @@ module.exports = (env, argv) => {
         entry: {
             main: ["./index.tsx", path.resolve(__dirname, "index.css")]
         },
+        optimization: {
+            minimize: true,
+            minimizer: [
+                `...`,
+                new CssMinimizerPlugin(),
+            ],
+        },
         output: {
             path: path.resolve("./dist"),
             clean: true,
@@ -23,7 +31,7 @@ module.exports = (env, argv) => {
         },
         plugins: [
             new HtmlWebpackPlugin({ template: path.resolve(__dirname, "index.html"), title: titleCase(argv.name) }),
-            isProduction && new MiniCssExtractPlugin(),
+            new MiniCssExtractPlugin(),
             new BundleAnalyzerPlugin({ analyzerMode: "static", openAnalyzer: false, generateStatsFile: true }),
         ].filter(Boolean),
         module: {

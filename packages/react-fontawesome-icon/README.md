@@ -68,7 +68,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 A simple React application with `react-fontawesome-icon` bundle compared to a similar application with `@fortawesome/react-fontawesome` bundle.
 
-## main (-23,723 bytes)
+## main (-25,442 bytes)
 
 || Module | Count | Size |
 |-|-|-|-|
