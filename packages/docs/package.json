@@ -1,0 +1,26 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "copy:apps": "cpy ../apps/baseline/dist/ dist/baseline && cpy ../apps/comparison/dist/ dist/comparison",
+    "stats:diff:wbd": "wbd diff dist/baseline/stats.json dist/comparison/stats.json -o dist/stats-diff.json &&wbd report dist/stats-diff.json -o dist/stats-diff.md",
+    "stats:diff:bundle-stats": "bundle-stats --html --json dist/comparison/stats.json dist/baseline/stats.json",
+    "build:diff": "yarn copy:apps && (yarn stats:diff:wbd & yarn stats:diff:bundle-stats)",
+    "build:readme:merge": "merge-markdown -m merge-markdown.manifest.yml",
+    "build:readme:copy": "cpy dist/README.md ../react-fontawesome-icon & cpy dist/README.md ../..",
+    "build:readme": "yarn build:readme:merge && yarn build:readme:copy",
+    "build": "yarn build:diff && yarn build:readme"
+  },
+  "devDependencies": {
+    "baseline": "^1.0.0",
+    "bundle-stats": "^3.2.0",
+    "comparison": "^1.0.0",
+    "cpy-cli": "^3.1.1",
+    "merge-markdown": "^0.2.0",
+    "webpack-bundle-diff": "^1.1.0"
+  }
+}

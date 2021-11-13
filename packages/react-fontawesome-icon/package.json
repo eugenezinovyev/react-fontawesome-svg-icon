@@ -1,0 +1,51 @@
+{
+  "name": "react-fontawesome-icon",
+  "keywords": [
+    "react",
+    "fontawesome",
+    "icon"
+  ],
+  "version": "1.0.0",
+  "description": "A minimal React component for Fontawesome SVG icon.",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
+  "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build:esm": "tsc --module esnext --outDir lib/esm",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "build": "yarn build:esm & yarn build:cjs",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-common-types": "^0.2.36",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@lcov-viewer/istanbul-report": "^1.1.0",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.2",
+    "@types/react": "^17.0.34",
+    "jest": "^27.3.1",
+    "react": "^17.0.2",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "files": [
+    "lib/**/*.*"
+  ],
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eugenezinovyev/react-fontawesome-icon.git",
+    "directory": "packages/react-fontawesome-icon"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "lerna run build --stream",
+    "test": "lerna run test --stream",
+    "version:update": "lerna version --no-push"
+  },
+  "workspaces": [
+    "packages/*",
+    "packages/apps/*"
+  ],
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eugenezinovyev/react-fontawesome-icon.git"
+  }
+}
