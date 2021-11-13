@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import App, { RenderIconProps } from '../common/App';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
-const renderIcon = (props: RenderIconProps) => <FontAwesomeIcon {...props} />;
-
-ReactDOM.render(<App renderIcon={renderIcon} />, document.getElementById('root'));
+ReactDOM.render(<FontAwesomeIcon icon={faCoffee} />, document.getElementById('root'));

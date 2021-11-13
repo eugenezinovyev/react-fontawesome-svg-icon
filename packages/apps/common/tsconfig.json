@@ -18,5 +18,5 @@
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["./", "../common/App"],
+  "include": ["./index.tsx"],
 }

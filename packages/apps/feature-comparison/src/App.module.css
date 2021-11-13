@@ -1,0 +1,64 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    padding: 0 2rem;
+    white-space: nowrap;
+    background-color: #2e7dd1;
+    color: #fff;
+}
+
+.exampleCollections {
+    display: flex;
+    flex-direction: row;
+}
+
+.exampleCollection {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.exampleCollection > header {
+    background-color: #4295ed;
+}
+
+.exampleCollection + .exampleCollection .example {
+    border-left: 3px solid #4295ed;
+}
+
+.example {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+.example:not(:last-child) {
+    border-bottom: 1px solid #a7d1f5;
+}
+
+.example h3 {
+    margin: 0.5rem 0;
+}
+
+.samples {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.samples svg {
+    margin: 1rem;
+}
+
+.exampleInverse {
+    background-color: #383a3d;
+    color: #fff;
+}

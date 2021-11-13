@@ -24,7 +24,7 @@ import { FontAwesomeIcon } from 'react-fontawesome-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const App = () => (
-    <FontAwesomeIcon icon={faCoffee} size="lg" />
+    <FontAwesomeIcon icon={faCoffee} />
 );
 
 export default App;
@@ -68,12 +68,12 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 A simple React application with `react-fontawesome-icon` bundle compared to a similar application with `@fortawesome/react-fontawesome` bundle.
 
-## main (-23,760 bytes)
+## main (-23,723 bytes)
 
 || Module | Count | Size |
 |-|-|-|-|
-|+|../../react-fontawesome-icon/lib/esm/index.js|2|+1,867|
-|+|../../react-fontawesome-icon/lib/esm/FontAwesomeIcon.js|1|+1,802|
+|+|../../react-fontawesome-icon/lib/esm/index.js|2|+1,922|
+|+|../../react-fontawesome-icon/lib/esm/FontAwesomeIcon.js|1|+1,857|
 |+|css ../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/@fortawesome/fontawesome-svg-core/styles.css|1|+7,891|
 |-|../../../node_modules/@fortawesome/react-fontawesome/index.es.js|5|-90,805|
 |-|../../../node_modules/@fortawesome/fontawesome-svg-core/index.es.js|1|-76,794|
