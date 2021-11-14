@@ -32,3 +32,6 @@ jobs:
         yarn
         yarn build
         yarn test
+
+    - name: Codecov
+      uses: codecov/codecov-action@v2.1.0
