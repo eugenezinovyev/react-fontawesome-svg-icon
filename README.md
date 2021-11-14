@@ -1,9 +1,9 @@
-![build](https://github.com/eugenezinovyev/react-fontawesome-icon/actions/workflows/main.yml/badge.svg)
-[![Known Vulnerabilities](https://snyk.io/test/github/eugenezinovyev/react-fontawesome-icon/badge.svg?targetFile=packages%2Freact-fontawesome-icon%2Fpackage.json)](https://snyk.io/test/github/eugenezinovyev/react-fontawesome-icon?targetFile=packages%2Freact-fontawesome-icon%2Fpackage.json)
-[![npm version](https://badge.fury.io/js/react-fontawesome-icon.svg)](https://www.npmjs.com/package/react-fontawesome-icon)
-[![min](https://badgen.net/bundlephobia/min/react-fontawesome-icon)](https://bundlephobia.com/package/react-fontawesome-icon)
-[![minzip](https://badgen.net/bundlephobia/minzip/react-fontawesome-icon)](https://bundlephobia.com/package/react-fontawesome-icon)
-[![tree-shaking](https://badgen.net/bundlephobia/tree-shaking/react-fontawesome-icon)](https://bundlephobia.com/package/react-fontawesome-icon)
+![build](https://github.com/eugenezinovyev/react-fontawesome-svg-icon/actions/workflows/main.yml/badge.svg)
+[![Known Vulnerabilities](https://snyk.io/test/github/eugenezinovyev/react-fontawesome-svg-icon/badge.svg?targetFile=packages%2Freact-fontawesome-svg-icon%2Fpackage.json)](https://snyk.io/test/github/eugenezinovyev/react-fontawesome-svg-icon?targetFile=packages%2Freact-fontawesome-svg-icon%2Fpackage.json)
+[![npm version](https://badge.fury.io/js/react-fontawesome-svg-icon.svg)](https://www.npmjs.com/package/react-fontawesome-svg-icon)
+[![min](https://badgen.net/bundlephobia/min/react-fontawesome-svg-icon)](https://bundlephobia.com/package/react-fontawesome-svg-icon)
+[![minzip](https://badgen.net/bundlephobia/minzip/react-fontawesome-svg-icon)](https://bundlephobia.com/package/react-fontawesome-svg-icon)
+[![tree-shaking](https://badgen.net/bundlephobia/tree-shaking/react-fontawesome-svg-icon)](https://bundlephobia.com/package/react-fontawesome-svg-icon)
 
 # Disclaimer
 
@@ -27,7 +27,7 @@ Check [installation section](#installation) to more details.
 
 ```tsx
 import React from 'react';
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const App = () => (
@@ -48,14 +48,14 @@ Resulting HTML
 
 # Installation
 
-Install `react-fontawesome-icon`, `@fortawesome/fontawesome-svg-core` and required SVG icon packages.
+Install `react-fontawesome-svg-icon`, `@fortawesome/fontawesome-svg-core` and required SVG icon packages.
 
 ```
-npm install --save react-fontawesome-icon @fortawesome/fontawesome-svg-core @fortawesome/free-regular-svg-icons @fortawesome/free-solid-svg-icons
+npm install --save react-fontawesome-svg-icon @fortawesome/fontawesome-svg-core @fortawesome/free-regular-svg-icons @fortawesome/free-solid-svg-icons
 ```
 
 ```
-yarn add react-fontawesome-icon @fortawesome/fontawesome-svg-core @fortawesome/free-regular-svg-icons @fortawesome/free-solid-svg-icons
+yarn add react-fontawesome-svg-icon @fortawesome/fontawesome-svg-core @fortawesome/free-regular-svg-icons @fortawesome/free-solid-svg-icons
 ```
 
 Import `@fortawesome/fontawesome-svg-core/styles.css` into the entry point.
@@ -77,7 +77,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 No array option `icon={["fal", "coffee"]}` supported.
 * If icon from different set needed, import it from different set: `import { faCoffee } from '@fortawesome/pro-light-svg-icons';`
 ```tsx
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const CoffeeIcon = () => <FontAwesomeSvgIcon icon={faCoffee} />;
@@ -86,7 +86,7 @@ const CoffeeIcon = () => <FontAwesomeSvgIcon icon={faCoffee} />;
 ## Icon sizing
 ```tsx
 // type SizeProp = "xs" | "lg" | "sm" | "1x" | "2x" | "3x" | "4x" | "5x" | "6x" | "7x" | "8x" | "9x" | "10x";
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const CoffeeIcons = () => (
@@ -100,7 +100,7 @@ const CoffeeIcons = () => (
 
 ## Styling
 ```tsx
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const Icons = () => (
@@ -117,7 +117,7 @@ const Icons = () => (
 
 ## Bordered
 ```tsx
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const CoffeeIcon = () => <FontAwesomeSvgIcon icon={faCoffee} border />;
@@ -125,7 +125,7 @@ const CoffeeIcon = () => <FontAwesomeSvgIcon icon={faCoffee} border />;
 
 ## Pulled Icons
 ```tsx
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const Icons = () => (
@@ -139,7 +139,7 @@ const Icons = () => (
 ## Swap Opacity
 Meaningful for Duotone icons.
 ```tsx
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const SwapOpacityIcon = () => <FontAwesomeSvgIcon icon={faCoffee} swapOpacity />;
@@ -149,7 +149,7 @@ const SwapOpacityIcon = () => <FontAwesomeSvgIcon icon={faCoffee} swapOpacity />
 ```tsx
 // type RotateProp = 90 | 180 | 270;
 // type FlipProp = "horizontal" | "vertical" | "both";
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faSnowboarding } from '@fortawesome/free-solid-svg-icons';
 
 const RotatingIcons = () => (
@@ -166,7 +166,7 @@ const RotatingIcons = () => (
 
 ## Animations
 ```tsx
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const AnimatedIcons = () => (
@@ -179,7 +179,7 @@ const AnimatedIcons = () => (
 
 ## Title
 ```tsx
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const CoffeeIcon = () => <FontAwesomeSvgIcon icon={faCoffee} title="Icon Title" />;
@@ -189,7 +189,7 @@ const CoffeeIcon = () => <FontAwesomeSvgIcon icon={faCoffee} title="Icon Title" 
 Component is wrapped with `React.forwardRef`. The ref passed to the root SVG element.
 ```tsx
 import React, { useRef } from 'react';
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const RefForwarding = () => {
@@ -208,13 +208,13 @@ const RefForwarding = () => {
 
 # Bundle comparison
 
-A simple React application with `react-fontawesome-icon` bundle compared to a similar application with `@fortawesome/react-fontawesome` bundle.
+A simple React application with `react-fontawesome-svg-icon` bundle compared to a similar application with `@fortawesome/react-fontawesome` bundle.
 
 ## main (-25,058 bytes)
 
 || Module | Count | Size |
 |-|-|-|-|
-|+|../../react-fontawesome-icon/lib/index.esm.js|1|+1,603|
+|+|../../react-fontawesome-svg-icon/lib/index.esm.js|1|+1,603|
 |+|css ../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/@fortawesome/fontawesome-svg-core/styles.css|1|+7,891|
 |-|../../../node_modules/@fortawesome/react-fontawesome/index.es.js|5|-90,805|
 |-|../../../node_modules/@fortawesome/fontawesome-svg-core/index.es.js|1|-76,794|
@@ -223,4 +223,4 @@ A simple React application with `react-fontawesome-icon` bundle compared to a si
 |-|webpack/runtime/define property getters|1|-308|
 |-|webpack/runtime/global|1|-221|
 |-|webpack/runtime/hasOwnProperty shorthand|1|-88|
-|△|*1 modules with minor changes*| |+54|
+|△|*1 modules with minor changes*| |+58|

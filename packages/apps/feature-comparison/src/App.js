@@ -1,5 +1,5 @@
 import { FontAwesomeIcon as FortAwesomeReactFontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FontAwesomeSvgIcon as ReactFontAwesomeIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon as ReactFontAwesomeIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee, faHeart, faSnowboarding, faCalendar as faCalendarSolid } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar as faCalendarRegular } from '@fortawesome/free-regular-svg-icons';
 import classes from './App.module.css';
@@ -110,7 +110,7 @@ const App = () => (
         </header>
         <div className={classes.exampleCollections}>
             <ExampleCollection title="@fortawesome/react-fontawesome" component={FortAwesomeReactFontAwesomeIcon} />
-            <ExampleCollection title="react-fontawesome-icon" component={ReactFontAwesomeIcon} />
+            <ExampleCollection title="react-fontawesome-svg-icon" component={ReactFontAwesomeIcon} />
         </div>
     </div>
 );

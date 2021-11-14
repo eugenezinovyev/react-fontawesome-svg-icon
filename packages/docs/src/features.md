@@ -5,7 +5,7 @@
 No array option `icon={["fal", "coffee"]}` supported.
 * If icon from different set needed, import it from different set: `import { faCoffee } from '@fortawesome/pro-light-svg-icons';`
 ```tsx
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const CoffeeIcon = () => <FontAwesomeSvgIcon icon={faCoffee} />;
@@ -14,7 +14,7 @@ const CoffeeIcon = () => <FontAwesomeSvgIcon icon={faCoffee} />;
 ## Icon sizing
 ```tsx
 // type SizeProp = "xs" | "lg" | "sm" | "1x" | "2x" | "3x" | "4x" | "5x" | "6x" | "7x" | "8x" | "9x" | "10x";
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const CoffeeIcons = () => (
@@ -28,7 +28,7 @@ const CoffeeIcons = () => (
 
 ## Styling
 ```tsx
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const Icons = () => (
@@ -45,7 +45,7 @@ const Icons = () => (
 
 ## Bordered
 ```tsx
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const CoffeeIcon = () => <FontAwesomeSvgIcon icon={faCoffee} border />;
@@ -53,7 +53,7 @@ const CoffeeIcon = () => <FontAwesomeSvgIcon icon={faCoffee} border />;
 
 ## Pulled Icons
 ```tsx
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const Icons = () => (
@@ -67,7 +67,7 @@ const Icons = () => (
 ## Swap Opacity
 Meaningful for Duotone icons.
 ```tsx
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const SwapOpacityIcon = () => <FontAwesomeSvgIcon icon={faCoffee} swapOpacity />;
@@ -77,7 +77,7 @@ const SwapOpacityIcon = () => <FontAwesomeSvgIcon icon={faCoffee} swapOpacity />
 ```tsx
 // type RotateProp = 90 | 180 | 270;
 // type FlipProp = "horizontal" | "vertical" | "both";
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faSnowboarding } from '@fortawesome/free-solid-svg-icons';
 
 const RotatingIcons = () => (
@@ -94,7 +94,7 @@ const RotatingIcons = () => (
 
 ## Animations
 ```tsx
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const AnimatedIcons = () => (
@@ -107,7 +107,7 @@ const AnimatedIcons = () => (
 
 ## Title
 ```tsx
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const CoffeeIcon = () => <FontAwesomeSvgIcon icon={faCoffee} title="Icon Title" />;
@@ -117,7 +117,7 @@ const CoffeeIcon = () => <FontAwesomeSvgIcon icon={faCoffee} title="Icon Title" 
 Component is wrapped with `React.forwardRef`. The ref passed to the root SVG element.
 ```tsx
 import React, { useRef } from 'react';
-import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const RefForwarding = () => {

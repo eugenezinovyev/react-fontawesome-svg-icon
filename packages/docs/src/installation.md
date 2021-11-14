@@ -1,13 +1,13 @@
 # Installation
 
-Install `react-fontawesome-icon`, `@fortawesome/fontawesome-svg-core` and required SVG icon packages.
+Install `react-fontawesome-svg-icon`, `@fortawesome/fontawesome-svg-core` and required SVG icon packages.
 
 ```
-npm install --save react-fontawesome-icon @fortawesome/fontawesome-svg-core @fortawesome/free-regular-svg-icons @fortawesome/free-solid-svg-icons
+npm install --save react-fontawesome-svg-icon @fortawesome/fontawesome-svg-core @fortawesome/free-regular-svg-icons @fortawesome/free-solid-svg-icons
 ```
 
 ```
-yarn add react-fontawesome-icon @fortawesome/fontawesome-svg-core @fortawesome/free-regular-svg-icons @fortawesome/free-solid-svg-icons
+yarn add react-fontawesome-svg-icon @fortawesome/fontawesome-svg-core @fortawesome/free-regular-svg-icons @fortawesome/free-solid-svg-icons
 ```
 
 Import `@fortawesome/fontawesome-svg-core/styles.css` into the entry point.
