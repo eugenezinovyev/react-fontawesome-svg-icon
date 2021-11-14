@@ -4,3 +4,4 @@
 [![min](https://badgen.net/bundlephobia/min/react-fontawesome-svg-icon)](https://bundlephobia.com/package/react-fontawesome-svg-icon)
 [![minzip](https://badgen.net/bundlephobia/minzip/react-fontawesome-svg-icon)](https://bundlephobia.com/package/react-fontawesome-svg-icon)
 [![tree-shaking](https://badgen.net/bundlephobia/tree-shaking/react-fontawesome-svg-icon)](https://bundlephobia.com/package/react-fontawesome-svg-icon)
+[![codecov](https://codecov.io/gh/eugenezinovyev/react-fontawesome-svg-icon/branch/main/graph/badge.svg?token=5WGM492AXT)](https://codecov.io/gh/eugenezinovyev/react-fontawesome-svg-icon)
