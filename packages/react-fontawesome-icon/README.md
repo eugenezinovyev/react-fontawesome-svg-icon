@@ -1,7 +1,9 @@
 ![build](https://github.com/eugenezinovyev/react-fontawesome-icon/actions/workflows/main.yml/badge.svg)
 [![Known Vulnerabilities](https://snyk.io/test/github/eugenezinovyev/react-fontawesome-icon/badge.svg?targetFile=packages%2Freact-fontawesome-icon%2Fpackage.json)](https://snyk.io/test/github/eugenezinovyev/react-fontawesome-icon?targetFile=packages%2Freact-fontawesome-icon%2Fpackage.json)
 [![npm version](https://badge.fury.io/js/react-fontawesome-icon.svg)](https://www.npmjs.com/package/react-fontawesome-icon)
-
+[![min](https://badgen.net/bundlephobia/min/react-fontawesome-icon)](https://bundlephobia.com/package/react-fontawesome-icon)
+[![minzip](https://badgen.net/bundlephobia/minzip/react-fontawesome-icon)](https://bundlephobia.com/package/react-fontawesome-icon)
+[![tree-shaking](https://badgen.net/bundlephobia/tree-shaking/react-fontawesome-icon)](https://bundlephobia.com/package/react-fontawesome-icon)
 # Disclaimer
 
 This package exists to let bundle size be smaller. This is not an official package.
