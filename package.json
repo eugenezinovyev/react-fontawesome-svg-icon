@@ -5,6 +5,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "prepare": "npx crlf --set=LF node_modules/.bin/webpack-bundle-diff",
     "build": "lerna run build --stream",
     "test": "lerna run test --stream",
     "version:update": "lerna version --no-push"

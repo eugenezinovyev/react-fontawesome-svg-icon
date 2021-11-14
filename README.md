@@ -4,6 +4,7 @@
 [![min](https://badgen.net/bundlephobia/min/react-fontawesome-icon)](https://bundlephobia.com/package/react-fontawesome-icon)
 [![minzip](https://badgen.net/bundlephobia/minzip/react-fontawesome-icon)](https://bundlephobia.com/package/react-fontawesome-icon)
 [![tree-shaking](https://badgen.net/bundlephobia/tree-shaking/react-fontawesome-icon)](https://bundlephobia.com/package/react-fontawesome-icon)
+
 # Disclaimer
 
 This package exists to let bundle size be smaller. This is not an official package.
