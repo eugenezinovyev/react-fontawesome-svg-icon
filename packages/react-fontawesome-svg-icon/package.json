@@ -7,7 +7,7 @@
     "svg icon",
     "icon"
   ],
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A minimal React component for Fontawesome SVG icon.",
   "main": "./lib/index.js",
   "module": "./lib/index.esm.js",
