@@ -1,6 +1,6 @@
 {
   "name": "comparison",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "private": true,
   "license": "MIT",
@@ -10,7 +10,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-fontawesome-svg-icon": "^1.0.0"
+    "react-fontawesome-svg-icon": "^1.0.3"
   },
   "devDependencies": {
     "@types/react": "^17.0.34",

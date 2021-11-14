@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
   "license": "MIT",
@@ -19,7 +19,7 @@
   "devDependencies": {
     "baseline": "^1.0.2",
     "bundle-stats": "^3.2.0",
-    "comparison": "^1.0.2",
+    "comparison": "^1.0.3",
     "concat": "^1.0.3",
     "cpy-cli": "^3.1.1",
     "webpack-bundle-diff": "^1.1.0"
