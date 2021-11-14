@@ -1,8 +1,34 @@
 import { FontAwesomeIcon as FortAwesomeReactFontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FontAwesomeSvgIcon as ReactFontAwesomeIcon } from 'react-fontawesome-icon';
-import { faCoffee, faCalendar as faCalendarSolid } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee, faHeart, faSnowboarding, faCalendar as faCalendarSolid } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar as faCalendarRegular } from '@fortawesome/free-regular-svg-icons';
 import classes from './App.module.css';
+
+const ExampleLayout = ({ className, title, children }) => (
+    <div className={[ classes.example, className ].filter(Boolean).join(' ')}>
+        <h3>{title}</h3>
+        {children}
+    </div>
+);
+
+const ListItemExample = ({ component: Component }) => (
+    <ExampleLayout className={classes.exampleListItem} title="List Item">
+        <ul className="fa-ul">
+            <li><Component icon={faCoffee} size="lg" listItem/> Coffee</li>
+            <li><Component icon={faHeart} size="lg" listItem/> Love</li>
+        </ul>
+    </ExampleLayout>
+);
+
+const SamplesExample = ({ className, component: Component, title, samples }) => (
+    <ExampleLayout className={className} title={title}>
+        <div className={classes.samples}>
+            {samples.map((sample, index) => (
+                <Component key={index} {...sample} />
+            ))}
+        </div>
+    </ExampleLayout>
+);
 
 const examples = [
     ["Solid & Regular", [{ icon: faCalendarSolid, size: "lg" }, { icon: faCalendarRegular, size: "lg" }]],
@@ -36,20 +62,17 @@ const examples = [
         { icon: faCoffee, size: "lg", pulse: true },
     ]],
     ["Inverse", classes.exampleInverse, [{ icon: faCoffee, size: "lg", inverse: true }]],
+    [ListItemExample],
+    ["Pull", [{ icon: faCoffee, size: "lg", pull: 'left' }, { icon: faCoffee, size: "lg", pull: 'right' }]],
+    ["Tab Index", [{ icon: faCoffee, size: "lg", tabIndex: 1 }, { icon: faHeart, size: "lg", tabIndex: 2 }]],
+    ["Swap Opacity", [{ icon: faCoffee, size: "lg", swapOpacity: true }]],
+    ["Rotation", [
+        { icon: faSnowboarding, size: "2x" },
+        { icon: faSnowboarding, size: "2x", rotation: 90 },
+        { icon: faSnowboarding, size: "2x", rotation: 180 },
+        { icon: faSnowboarding, size: "2x", rotation: 270 },
+    ]],
 ];
-
-const Example = ({ className, component: Component, title, samples }) => {
-    return (
-        <div className={[classes.example, className].filter(Boolean).join(' ')}>
-            <h3>{title}</h3>
-            <div className={classes.samples}>
-                {samples.map((sample, index) => (
-                    <Component key={index} {...sample} />
-                ))}
-            </div>
-        </div>
-    );
-};
 
 const ExampleCollection = ({ component: Component, title: collectionTitle }) => {
     return (
@@ -58,16 +81,22 @@ const ExampleCollection = ({ component: Component, title: collectionTitle }) => 
                 <h2>{collectionTitle}</h2>
             </header>
             {examples.map((example, index) => {
-                let title, className, samples;
+                let title, className, samples, ExampleComponent;
                 
                 if (example.length === 3) {
                     [title, className, samples] = example;
-                } else {
+                } else if (example.length === 2) {
                     [title, samples] = example;
+                }  else {
+                    [ExampleComponent] = example;
+                }
+                
+                if (ExampleComponent) {
+                    return <ExampleComponent key={index} component={Component} />;
                 }
                 
                 return (
-                    <Example key={index} className={className} component={Component} title={title} samples={samples}/>
+                    <SamplesExample key={index} className={className} component={Component} title={title} samples={samples}/>
                 );
             })}
         </div>

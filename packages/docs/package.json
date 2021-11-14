@@ -11,7 +11,7 @@
     "stats:diff:wbd": "wbd report dist/stats-diff.json -o dist/stats-diff.md",
     "stats:diff:bundle-stats": "bundle-stats --html --json dist/comparison/stats.json dist/baseline/stats.json",
     "build:diff": "yarn copy:apps && (yarn stats:diff:wbd & yarn stats:diff:bundle-stats)",
-    "build:readme:merge": "concat -o dist/README.md src/badges.md src/disclaimer.md src/motivation.md src/how.md src/installation.md src/bundle-comparison.md dist/stats-diff.md",
+    "build:readme:merge": "concat -o dist/README.md src/badges.md src/disclaimer.md src/motivation.md src/how.md src/installation.md src/features.md src/bundle-comparison.md dist/stats-diff.md",
     "build:readme:copy": "cpy dist/README.md ../react-fontawesome-icon & cpy dist/README.md ../..",
     "build:readme": "yarn build:readme:merge && yarn build:readme:copy",
     "build": "yarn build:diff && yarn build:readme"

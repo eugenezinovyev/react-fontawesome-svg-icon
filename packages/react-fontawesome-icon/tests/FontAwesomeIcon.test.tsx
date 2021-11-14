@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import { FontAwesomeSvgIcon } from '../src';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
-import { FlipProp, SizeProp } from '@fortawesome/fontawesome-svg-core';
+import { FlipProp, PullProp, RotateProp, SizeProp } from '@fortawesome/fontawesome-svg-core';
 import { IconDefinition, IconPathData } from '@fortawesome/fontawesome-common-types';
 
 describe('<FontAwesomeSvgIcon />', () => {
@@ -109,5 +109,40 @@ describe('<FontAwesomeSvgIcon />', () => {
         render(<FontAwesomeSvgIcon data-testid="icon" icon={faCoffee} inverse />);
 
         expect(screen.getByTestId('icon')).toHaveClass("fa-inverse");
+    });
+
+    it("should process 'listItem' prop", () => {
+        render(<FontAwesomeSvgIcon data-testid="icon" icon={faCoffee} listItem />);
+
+        expect(screen.getByTestId('icon')).toHaveClass("fa-li");
+    });
+
+    it("should process 'swapOpacity' prop", () => {
+        render(<FontAwesomeSvgIcon data-testid="icon" icon={faCoffee} swapOpacity />);
+
+        expect(screen.getByTestId('icon')).toHaveClass("fa-swap-opacity");
+    });
+
+    const pullCases: [PullProp, string][] = [
+        ['left', 'fa-pull-left'],
+        ['right', 'fa-pull-right'],
+    ]
+
+    it.each(pullCases)("should process '%s' pull", (pull, expectedClass) => {
+        render(<FontAwesomeSvgIcon data-testid="icon" icon={faCoffee} pull={pull} />);
+
+        expect(screen.getByTestId('icon')).toHaveClass(expectedClass);
+    });
+
+    const rotationCases: [RotateProp, string][] = [
+        [90, 'fa-rotate-90'],
+        [180, 'fa-rotate-180'],
+        [270, 'fa-rotate-270'],
+    ]
+
+    it.each(rotationCases)("should process '%s' rotation", (rotation, expectedClass) => {
+        render(<FontAwesomeSvgIcon data-testid="icon" icon={faCoffee} rotation={rotation} />);
+
+        expect(screen.getByTestId('icon')).toHaveClass(expectedClass);
     });
 });
