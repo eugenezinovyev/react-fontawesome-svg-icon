@@ -27,11 +27,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Codecov
-      uses: codecov/codecov-action@v2.1.0
-
     - name: Install and Test
       run: |
         yarn
         yarn build
         yarn test
+
+    - name: Codecov
+      uses: codecov/codecov-action@v2.1.0
