@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "index.js",
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
   "license": "MIT",
@@ -17,9 +17,9 @@
     "build": "yarn build:diff && yarn build:readme"
   },
   "devDependencies": {
-    "baseline": "^1.0.0",
+    "baseline": "^1.0.2",
     "bundle-stats": "^3.2.0",
-    "comparison": "^1.0.0",
+    "comparison": "^1.0.2",
     "concat": "^1.0.3",
     "cpy-cli": "^3.1.1",
     "webpack-bundle-diff": "^1.1.0"
