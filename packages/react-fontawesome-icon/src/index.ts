@@ -1,1 +1,1 @@
-export { default as FontAwesomeIcon, FontAwesomeIconProps } from './FontAwesomeIcon';
+export { FontAwesomeSvgIcon, FontAwesomeSvgIconProps } from './FontAwesomeSvgIcon';

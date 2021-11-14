@@ -2,6 +2,10 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/eugenezinovyev/react-fontawesome-icon/badge.svg?targetFile=packages%2Freact-fontawesome-icon%2Fpackage.json)](https://snyk.io/test/github/eugenezinovyev/react-fontawesome-icon?targetFile=packages%2Freact-fontawesome-icon%2Fpackage.json)
 [![npm version](https://badge.fury.io/js/react-fontawesome-icon.svg)](https://www.npmjs.com/package/react-fontawesome-icon)
 
+# Disclaimer
+
+This package exists to let bundle size be smaller. This is not an official package.
+If you are looking for an official one, please, check here: [react-fontawesome](https://www.npmjs.com/package/react-fontawesome)
 # Motivation
 
 I regularly need Font Awesome SVG icon to be used in personal projects.
@@ -20,11 +24,11 @@ Check [installation section](#installation) to more details.
 
 ```tsx
 import React from 'react';
-import { FontAwesomeIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const App = () => (
-    <FontAwesomeIcon icon={faCoffee} />
+    <FontAwesomeSvgIcon icon={faCoffee} />
 );
 
 export default App;
@@ -57,7 +61,6 @@ Import `@fortawesome/fontawesome-svg-core/styles.css` into the entry point.
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import { FontAwesomeIcon } from 'react-fontawesome-icon';
 import App from './components/App';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -72,8 +75,8 @@ A simple React application with `react-fontawesome-icon` bundle compared to a si
 
 || Module | Count | Size |
 |-|-|-|-|
-|+|../../react-fontawesome-icon/lib/esm/index.js|2|+1,922|
-|+|../../react-fontawesome-icon/lib/esm/FontAwesomeIcon.js|1|+1,857|
+|+|../../react-fontawesome-icon/lib/esm/index.js|2|+1,942|
+|+|../../react-fontawesome-icon/lib/esm/FontAwesomeSvgIcon.js|1|+1,882|
 |+|css ../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/@fortawesome/fontawesome-svg-core/styles.css|1|+7,891|
 |-|../../../node_modules/@fortawesome/react-fontawesome/index.es.js|5|-90,805|
 |-|../../../node_modules/@fortawesome/fontawesome-svg-core/index.es.js|1|-76,794|
@@ -82,4 +85,4 @@ A simple React application with `react-fontawesome-icon` bundle compared to a si
 |-|webpack/runtime/define property getters|1|-308|
 |-|webpack/runtime/global|1|-221|
 |-|webpack/runtime/hasOwnProperty shorthand|1|-88|
-|△|*1 modules with minor changes*| |+48|
+|△|*1 modules with minor changes*| |+54|

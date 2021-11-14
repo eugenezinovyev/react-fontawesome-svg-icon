@@ -1,16 +1,16 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { FontAwesomeIcon } from '../src/index';
+import { FontAwesomeSvgIcon } from '../src';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { FlipProp, SizeProp } from '@fortawesome/fontawesome-svg-core';
 import { IconDefinition, IconPathData } from '@fortawesome/fontawesome-common-types';
 
-describe('<FontAwesomeIcon />', () => {
+describe('<FontAwesomeSvgIcon />', () => {
     it('should not fail when no icon specified', () => {
         // @ts-ignore
-        expect(() => render(<FontAwesomeIcon />)).not.toThrow();
+        expect(() => render(<FontAwesomeSvgIcon />)).not.toThrow();
     });
     
     const iconCases: [IconDefinition, IconPathData][] = [
@@ -19,7 +19,7 @@ describe('<FontAwesomeIcon />', () => {
     ];
     
     it.each(iconCases)("should process 'icon' prop with solid icon", (icon, expectedPathData) => {
-        const { container } = render(<FontAwesomeIcon data-testid="icon" icon={icon} />);
+        const { container } = render(<FontAwesomeSvgIcon data-testid="icon" icon={icon} />);
         expect(container.querySelector('path')).toHaveAttribute('d', expectedPathData);
     });
 
@@ -40,43 +40,43 @@ describe('<FontAwesomeIcon />', () => {
     ];
 
     test.each(sizeCases)("should process '%s' size", (size, expectedClass) => {
-        render(<FontAwesomeIcon data-testid="icon" icon={faCoffee} size={size} />);
+        render(<FontAwesomeSvgIcon data-testid="icon" icon={faCoffee} size={size} />);
 
         expect(screen.getByTestId('icon')).toHaveClass(expectedClass);
     });
 
     it("should process 'className' prop", () => {
-        render(<FontAwesomeIcon data-testid="icon" icon={faCoffee} className="custom-class-name" />);
+        render(<FontAwesomeSvgIcon data-testid="icon" icon={faCoffee} className="custom-class-name" />);
 
         expect(screen.getByTestId('icon')).toHaveClass("custom-class-name");
     });
 
     it("should process 'style' prop", () => {
-        render(<FontAwesomeIcon data-testid="icon" icon={faCoffee} style={{ backgroundColor: 'red' }} />);
+        render(<FontAwesomeSvgIcon data-testid="icon" icon={faCoffee} style={{ backgroundColor: 'red' }} />);
 
         expect(screen.getByTestId('icon')).toHaveStyle("background-color: red;");
     });
 
     it("should process 'title' prop", () => {
-        render(<FontAwesomeIcon data-testid="icon" icon={faCoffee} title="test-title" />);
+        render(<FontAwesomeSvgIcon data-testid="icon" icon={faCoffee} title="test-title" />);
 
         expect(screen.getByLabelText('test-title')).toBeInTheDocument();
     });
 
     it("should process 'color' prop", () => {
-        render(<FontAwesomeIcon data-testid="icon" icon={faCoffee} color="#ddd" />);
+        render(<FontAwesomeSvgIcon data-testid="icon" icon={faCoffee} color="#ddd" />);
 
         expect(screen.getByTestId('icon')).toHaveAttribute("color", "#ddd");
     });
 
     it("should process 'border' prop", () => {
-        render(<FontAwesomeIcon data-testid="icon" icon={faCoffee} border/>);
+        render(<FontAwesomeSvgIcon data-testid="icon" icon={faCoffee} border/>);
 
         expect(screen.getByTestId('icon')).toHaveClass("fa-border");
     });
 
     it("should process 'fixedWidth' prop", () => {
-        render(<FontAwesomeIcon data-testid="icon" icon={faCoffee} fixedWidth />);
+        render(<FontAwesomeSvgIcon data-testid="icon" icon={faCoffee} fixedWidth />);
 
         expect(screen.getByTestId('icon')).toHaveClass("fa-fw");
     });
@@ -88,25 +88,25 @@ describe('<FontAwesomeIcon />', () => {
     ];
 
     it.each(flipCases)("should process '%s' flip", (flip, expectedClass) => {
-        render(<FontAwesomeIcon data-testid="icon" icon={faCoffee} flip={flip} />);
+        render(<FontAwesomeSvgIcon data-testid="icon" icon={faCoffee} flip={flip} />);
 
         expect(screen.getByTestId('icon')).toHaveClass(expectedClass);
     });
 
     it("should process 'spin' prop", () => {
-        render(<FontAwesomeIcon data-testid="icon" icon={faCoffee} spin />);
+        render(<FontAwesomeSvgIcon data-testid="icon" icon={faCoffee} spin />);
 
         expect(screen.getByTestId('icon')).toHaveClass("fa-spin");
     });
     
     it("should process 'pulse' prop", () => {
-        render(<FontAwesomeIcon data-testid="icon" icon={faCoffee} pulse />);
+        render(<FontAwesomeSvgIcon data-testid="icon" icon={faCoffee} pulse />);
 
         expect(screen.getByTestId('icon')).toHaveClass("fa-pulse");
     });
 
     it("should process 'inverse' prop", () => {
-        render(<FontAwesomeIcon data-testid="icon" icon={faCoffee} inverse />);
+        render(<FontAwesomeSvgIcon data-testid="icon" icon={faCoffee} inverse />);
 
         expect(screen.getByTestId('icon')).toHaveClass("fa-inverse");
     });

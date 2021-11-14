@@ -1,5 +1,5 @@
 import { FontAwesomeIcon as FortAwesomeReactFontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FontAwesomeIcon as ReactFontAwesomeIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon as ReactFontAwesomeIcon } from 'react-fontawesome-icon';
 import { faCoffee, faCalendar as faCalendarSolid } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar as faCalendarRegular } from '@fortawesome/free-regular-svg-icons';
 import classes from './App.module.css';

@@ -16,7 +16,6 @@ Import `@fortawesome/fontawesome-svg-core/styles.css` into the entry point.
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import { FontAwesomeIcon } from 'react-fontawesome-icon';
 import App from './components/App';
 
 ReactDOM.render(<App />, document.getElementById('root'));

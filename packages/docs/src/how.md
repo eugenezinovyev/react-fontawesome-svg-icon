@@ -10,11 +10,11 @@ Check [installation section](#installation) to more details.
 
 ```tsx
 import React from 'react';
-import { FontAwesomeIcon } from 'react-fontawesome-icon';
+import { FontAwesomeSvgIcon } from 'react-fontawesome-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const App = () => (
-    <FontAwesomeIcon icon={faCoffee} />
+    <FontAwesomeSvgIcon icon={faCoffee} />
 );
 
 export default App;

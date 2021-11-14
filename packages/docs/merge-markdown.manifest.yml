@@ -3,6 +3,7 @@ noYAML: false
 TOC: false
 input:
   src/badges.md: { noYAML: false, TOC: false }
+  src/disclaimer.md: { noYAML: false, TOC: false }
   src/motivation.md: { noYAML: false, TOC: false }
   src/how.md: { noYAML: false, TOC: false }
   src/installation.md: { noYAML: false, TOC: false }
