@@ -1,0 +1,13 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+.root:not(:last-child) {
+    border-bottom: 1px solid #a7d1f5;
+}
+
+.root h3 {
+    margin: 0.5rem 0;
+}

@@ -16,7 +16,8 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src/*"
   },
   "peerDependencies": {
     "react": "^17.0.2"

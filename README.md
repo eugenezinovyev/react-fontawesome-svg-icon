@@ -211,11 +211,11 @@ const RefForwarding = () => {
 
 A simple React application with `react-fontawesome-svg-icon` bundle compared to a similar application with `@fortawesome/react-fontawesome` bundle.
 
-## main (-25,058 bytes)
+## main (-25,039 bytes)
 
 || Module | Count | Size |
 |-|-|-|-|
-|+|../../react-fontawesome-svg-icon/lib/index.esm.js|1|+1,603|
+|+|../../react-fontawesome-svg-icon/lib/index.esm.js|1|+1,622|
 |+|css ../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/@fortawesome/fontawesome-svg-core/styles.css|1|+7,891|
 |-|../../../node_modules/@fortawesome/react-fontawesome/index.es.js|5|-90,805|
 |-|../../../node_modules/@fortawesome/fontawesome-svg-core/index.es.js|1|-76,794|

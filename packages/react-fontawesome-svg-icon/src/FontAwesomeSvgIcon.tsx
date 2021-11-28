@@ -71,8 +71,8 @@ const buildClassName = (props: FontAwesomeSvgIconProps) => {
  * FontAwesome SVG icon component.
  * */
 export const FontAwesomeSvgIcon: ForwardRefExoticComponent<FontAwesomeSvgIconProps> = forwardRef(
-    (props: FontAwesomeSvgIconProps, ref: ForwardedRef<SVGSVGElement>): JSX.Element | null => {
-        const { icon, title, ...restProps } = props;
+    function FontAwesomeSvgIcon(props: FontAwesomeSvgIconProps, ref: ForwardedRef<SVGSVGElement>): JSX.Element | null {
+        const { icon, title, role, ...restProps } = props;
 
         if (!icon) {
             return null;
@@ -85,16 +85,16 @@ export const FontAwesomeSvgIcon: ForwardRefExoticComponent<FontAwesomeSvgIconPro
 
         return (
             <svg
-                className={svgClassName}
-                role="img"
+                className={ svgClassName }
+                role={ role || 'img' }
                 xmlns="http://www.w3.org/2000/svg"
-                aria-labelledby={ariaLabelledBy}
-                ref={ref}
-                viewBox={`0 0 ${width} ${height}`}
-                {...restProps}
+                aria-labelledby={ ariaLabelledBy }
+                ref={ ref }
+                viewBox={ `0 0 ${ width } ${ height }` }
+                { ...restProps }
             >
-                {ariaLabelledBy && <title id={ariaLabelledBy}>{title}</title>}
-                <path fill="currentColor" d={vectorData.toString()}/>
+                { ariaLabelledBy && <title id={ ariaLabelledBy }>{ title }</title> }
+                <path fill="currentColor" d={ vectorData.toString() }/>
             </svg>
         );
     });

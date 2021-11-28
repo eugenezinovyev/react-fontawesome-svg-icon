@@ -1,0 +1,20 @@
+.root {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.header {
+    padding: 0 2rem;
+    white-space: nowrap;
+    background-color: #4295ed;
+    color: #fff;
+}
+
+
+.root + .root section {
+    border-left: 3px solid #4295ed;
+}
