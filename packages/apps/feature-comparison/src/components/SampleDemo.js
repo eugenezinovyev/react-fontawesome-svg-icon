@@ -8,6 +8,7 @@ import classes from './SampleDemo.module.css';
 const prefixImportMapping = {
     'fas': '@fortawesome/free-solid-svg-icons',
     'far': '@fortawesome/free-regular-svg-icons',
+    'fab': '@fortawesome/free-brands-svg-icons',
 };
 
 const capitalize = (str) => `${str[0].toUpperCase()}${str.substring(1)}`;
@@ -17,7 +18,7 @@ const makeIconsImport = (prefix, icons, useAlias) => {
     const iconNames = icons.map((name) => useAlias ? `${(makeIconName(name))} as ${makeIconName(name, prefix)}` : makeIconName(name)).join(', ');
     const iconPackage = getIconPackage(prefix);
 
-    return `import { ${iconNames} } '${iconPackage}';`;
+    return `import { ${iconNames} } from '${iconPackage}';`;
 };
 
 const formatPropValue = (propName, sample, useAlias) => {

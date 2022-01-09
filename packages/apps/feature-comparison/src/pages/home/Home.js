@@ -2,7 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import homeContent from './home-content.md?raw';
-import CodeHighlight from '../components/CodeHighlight';
+import CodeHighlight from '../../components/CodeHighlight';
 
 function code({ node, inline, className, children, ...props }) {
     const match = /language-(\w+)/.exec(className || '');

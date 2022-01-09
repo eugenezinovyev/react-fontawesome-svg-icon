@@ -1,7 +1,7 @@
 import React from 'react';
 import { shape, string } from 'prop-types';
-import Example from '../components/Example';
-import SampleDemo from '../components/SampleDemo';
+import Example from '../../../components/Example';
+import SampleDemo from '../../../components/SampleDemo';
 
 const GenericSamplesExample = ({ id, title, samples, classes }) => (
     <Example id={id} title={title} className={classes?.root}>

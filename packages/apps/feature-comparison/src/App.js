@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './layout/Layout';
-import Home from './pages/Home';
-import Features from './pages/Features';
+import Home from './pages/home/Home';
+import Features from './pages/features/Features';
 
 const App = () => (
     <BrowserRouter>

@@ -54,6 +54,7 @@ module.exports = (env, argv) => {
             rules: [
                 {
                     test: /\.(js|jsx)$/i,
+                    resourceQuery: { not: /raw/ },
                     use: {
                         loader: 'babel-loader',
                         options: {
