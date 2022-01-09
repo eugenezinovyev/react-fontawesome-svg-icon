@@ -1,0 +1,35 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+.icon-container {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.icon {
+    height: 64px;
+    width: 64px;
+}
+
+.package-title {
+    white-space: nowrap;
+    margin: 0 0 0.5rem 0;
+    text-align: center;
+}
+
+.nav-bar-outlet {
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.nav-bar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}

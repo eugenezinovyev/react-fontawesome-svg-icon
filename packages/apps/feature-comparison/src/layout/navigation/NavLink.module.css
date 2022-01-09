@@ -1,0 +1,10 @@
+.root, .root:active, .root:visited {
+    padding: 0.5rem 1rem;
+    color: #383a3d;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.root.active {
+    color: #2e7dd1;
+}

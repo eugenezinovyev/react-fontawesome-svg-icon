@@ -1,4 +1,4 @@
-import React, { CSSProperties, ForwardedRef, forwardRef, ForwardRefExoticComponent, SVGAttributes } from 'react';
+import React, { CSSProperties, ForwardedRef, forwardRef, ForwardRefExoticComponent, ForwardRefRenderFunction, SVGAttributes } from 'react';
 import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 import { FlipProp, PullProp, RotateProp, SizeProp } from '@fortawesome/fontawesome-svg-core';
 
@@ -43,58 +43,83 @@ export interface FontAwesomeSvgIconProps extends Omit<SVGAttributes<SVGSVGElemen
 
 const clsx = (...classes: (string | undefined | null | false)[]) => classes.filter(Boolean).join(' ');
 const randomID = (): string => Math.random().toString(36).substr(2);
+const omit = (object: object, properties: string[]): object => {
+    const result = {};
 
-const buildClassName = (props: FontAwesomeSvgIconProps) => {
-    const { icon, size, className, border, fixedWidth, flip, spin, pulse, inverse, listItem, pull, swapOpacity, rotation } = props; 
-    const { iconName, icon: [width, height] } = icon;
+    for (const key in object) {
+        if (Object.hasOwnProperty.call(object, key) && !properties.includes(key)) {
+            result[key] = object[key];
+        }
+    }
 
-    return clsx(
-        'svg-inline--fa',
-        `fa-${iconName}`,
-        `fa-w-${Math.ceil(width / height * 16)}`,
-        size && `fa-${size}`,
-        border && 'fa-border',
-        fixedWidth && 'fa-fw',
-        flip && `fa-flip-${flip}`,
-        spin && 'fa-spin',
-        pulse && 'fa-pulse',
-        inverse && 'fa-inverse',
-        listItem && 'fa-li',
-        pull && `fa-pull-${pull}`,
-        swapOpacity && 'fa-swap-opacity',
-        rotation && `fa-rotate-${rotation}`,
-        className,
+    return result;
+};
+
+const buildClassName = (props: FontAwesomeSvgIconProps) => clsx(
+    'svg-inline--fa',
+    `fa-${ (props.icon.iconName) }`,
+    `fa-w-${ Math.ceil(props.icon.icon[0] / props.icon.icon[1] * 16) }`,
+    props.size && `fa-${ (props.size) }`,
+    props.border && 'fa-border',
+    props.fixedWidth && 'fa-fw',
+    props.flip && `fa-flip-${ (props.flip) }`,
+    props.spin && 'fa-spin',
+    props.pulse && 'fa-pulse',
+    props.inverse && 'fa-inverse',
+    props.listItem && 'fa-li',
+    props.pull && `fa-pull-${ (props.pull) }`,
+    props.swapOpacity && 'fa-swap-opacity',
+    props.rotation && `fa-rotate-${ (props.rotation) }`,
+    props.className,
+);
+
+const customProperties = [
+    'icon',
+    'size',
+    'className',
+    'title',
+    'border',
+    'fixedWidth',
+    'flip',
+    'spin',
+    'pulse',
+    'inverse',
+    'listItem',
+    'pull',
+    'swapOpacity',
+    'rotation',
+    'role',
+];
+
+type FontAwesomeSvgIconRenderFunction = ForwardRefRenderFunction<SVGSVGElement, FontAwesomeSvgIconProps>;
+
+const renderFunction: FontAwesomeSvgIconRenderFunction = (props: FontAwesomeSvgIconProps, ref: ForwardedRef<SVGSVGElement>): JSX.Element | null => {
+    if (!props.icon) {
+        return null;
+    }
+
+    const { icon: [width, height, , , vectorData] } = props.icon;
+    const ariaLabelledBy = props.title ? randomID() : undefined;
+
+    return (
+        <svg
+            className={ buildClassName(props) }
+            xmlns="http://www.w3.org/2000/svg"
+            aria-labelledby={ ariaLabelledBy }
+            ref={ ref }
+            viewBox={ `0 0 ${ width } ${ height }` }
+            role={ props.role || 'img' }
+            { ...omit(props, customProperties) }
+        >
+            { ariaLabelledBy && <title id={ ariaLabelledBy }>{ props.title }</title> }
+            <path fill="currentColor" d={ vectorData.toString() }/>
+        </svg>
     );
 };
 
 /**
  * FontAwesome SVG icon component.
  * */
-export const FontAwesomeSvgIcon: ForwardRefExoticComponent<FontAwesomeSvgIconProps> = forwardRef(
-    function FontAwesomeSvgIcon(props: FontAwesomeSvgIconProps, ref: ForwardedRef<SVGSVGElement>): JSX.Element | null {
-        const { icon, title, role, ...restProps } = props;
+export const FontAwesomeSvgIcon: ForwardRefExoticComponent<FontAwesomeSvgIconProps> = forwardRef(renderFunction);
 
-        if (!icon) {
-            return null;
-        }
-
-        const { icon: [width, height, , , vectorData] } = icon;
-
-        const svgClassName = buildClassName(props);
-        const ariaLabelledBy = title ? randomID() : undefined;
-
-        return (
-            <svg
-                className={ svgClassName }
-                role={ role || 'img' }
-                xmlns="http://www.w3.org/2000/svg"
-                aria-labelledby={ ariaLabelledBy }
-                ref={ ref }
-                viewBox={ `0 0 ${ width } ${ height }` }
-                { ...restProps }
-            >
-                { ariaLabelledBy && <title id={ ariaLabelledBy }>{ title }</title> }
-                <path fill="currentColor" d={ vectorData.toString() }/>
-            </svg>
-        );
-    });
+FontAwesomeSvgIcon.displayName = 'FontAwesomeSvgIcon';
