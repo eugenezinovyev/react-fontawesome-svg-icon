@@ -32,7 +32,7 @@ module.exports = (env, argv) => {
             new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src/index.html') }),
             new MiniCssExtractPlugin(),
             new FaviconsWebpackPlugin({
-                logo: path.resolve(__dirname, '../../../icon.svg'),
+                logo: path.resolve(__dirname, '../../icon.svg'),
                 mode: 'webapp',
                 devMode: 'webapp',
                 prefix: '',

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import homeContent from './home-content.md?raw';
+import homeContent from '@react-fontawesome-svg-icon/readme?raw';
 import CodeHighlight from '../../components/CodeHighlight';
 
 function code({ node, inline, className, children, ...props }) {

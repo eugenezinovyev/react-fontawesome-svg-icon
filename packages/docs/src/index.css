@@ -1,6 +1,7 @@
 html {
     font-size: 14px;
     color: #383a3d;
+    scroll-behavior: smooth;
 }
 
 body {

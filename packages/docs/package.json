@@ -1,27 +1,69 @@
 {
-  "name": "docs",
+  "name": "@react-fontawesome-svg-icon/docs",
   "version": "1.0.5",
-  "main": "index.js",
-  "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
-  "license": "MIT",
   "private": true,
-  "scripts": {
-    "copy:apps": "cpy ../apps/baseline/dist/ dist/baseline && cpy ../apps/comparison/dist/ dist/comparison",
-    "prestats:diff:wbd": "wbd diff dist/baseline/stats.json dist/comparison/stats.json -o dist/stats-diff.json",
-    "stats:diff:wbd": "wbd report dist/stats-diff.json -o dist/stats-diff.md",
-    "stats:diff:bundle-stats": "bundle-stats --html --json dist/comparison/stats.json dist/baseline/stats.json",
-    "build:diff": "yarn copy:apps && (yarn stats:diff:wbd & yarn stats:diff:bundle-stats)",
-    "build:readme:merge": "concat -o dist/README.md src/badges.md src/disclaimer.md src/motivation.md src/demo.md src/how.md src/installation.md src/features.md src/bundle-comparison.md dist/stats-diff.md",
-    "build:readme:copy": "cpy dist/README.md ../react-fontawesome-svg-icon & cpy dist/README.md ../.. & cpy dist/README.md ../apps/feature-comparison/src/pages/home --rename=home-content.md",
-    "build:readme": "yarn build:readme:merge && yarn build:readme:copy",
-    "build": "yarn build:diff && yarn build:readme"
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@react-fontawesome-svg-icon/readme": "^1.0.5",
+    "clsx": "^1.1.1",
+    "prismjs": "^1.26.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-fontawesome-svg-icon": "^1.0.5",
+    "react-markdown": "^7.1.2",
+    "react-router": "^6.2.1",
+    "react-router-dom": "^6.2.1",
+    "react-router-hash-link": "^2.4.3",
+    "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
-    "baseline": "^1.0.5",
-    "bundle-stats": "^3.2.0",
-    "comparison": "^1.0.5",
-    "concat": "^1.0.3",
-    "cpy-cli": "^3.1.1",
-    "webpack-bundle-diff": "^1.1.0"
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-prismjs": "^2.1.0",
+    "css-loader": "^6.5.1",
+    "favicons": "^6.2.2",
+    "favicons-webpack-plugin": "^5.0.2",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.6",
+    "prop-types": "^15.8.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.2"
+  },
+  "scripts": {
+    "start": "webpack serve --mode=development --node-env=development",
+    "build": "webpack --mode=production --node-env=production",
+    "lint": "eslint src/**/*.js"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      [
+        "@babel/preset-react",
+        {
+          "runtime": "automatic"
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "prismjs",
+        {
+          "languages": [
+            "jsx",
+            "tsx",
+            "shell"
+          ],
+          "theme": "default",
+          "css": true
+        }
+      ]
+    ]
   }
 }
