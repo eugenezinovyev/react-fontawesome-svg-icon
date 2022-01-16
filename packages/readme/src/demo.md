@@ -1,1 +1,1 @@
-# [Demo](https://react-fontawesome-svg-icons.netlify.app/features)
+# [Demo](https://react-fontawesome-svg-icon.netlify.app/features)
