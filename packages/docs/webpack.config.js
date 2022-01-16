@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, argv) => {
     const isProduction = argv.mode === 'production';
@@ -49,6 +50,11 @@ module.exports = (env, argv) => {
                     },
                 },
             }),
+            new CopyPlugin({
+                patterns: [
+                    { from: 'public' },
+                ],
+            })
         ].filter(Boolean),
         module: {
             rules: [
