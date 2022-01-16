@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
-    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
     "@babel/preset-react": "^7.16.7",
     "babel-loader": "^8.2.3",
     "babel-plugin-prismjs": "^2.1.0",
@@ -29,12 +29,12 @@
     "favicons": "^6.2.2",
     "favicons-webpack-plugin": "^5.0.2",
     "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "^2.4.6",
+    "mini-css-extract-plugin": "2.4.6",
     "prop-types": "^15.8.1",
     "style-loader": "^3.3.1",
-    "webpack": "^5.65.0",
+    "webpack": "^5.66.0",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.7.2"
+    "webpack-dev-server": "^4.7.3"
   },
   "scripts": {
     "start": "webpack serve --mode=development --node-env=development",
