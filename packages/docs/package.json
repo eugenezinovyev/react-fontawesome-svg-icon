@@ -46,7 +46,7 @@
   "scripts": {
     "start": "webpack serve --mode=development --node-env=development",
     "build": "webpack --mode=production --node-env=production",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint --ext ts,tsx src"
   },
   "babel": {
     "presets": [
