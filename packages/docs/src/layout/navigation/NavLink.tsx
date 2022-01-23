@@ -1,12 +1,15 @@
-import React from 'react';
+import { FunctionComponent, PropsWithChildren } from 'react';
 import { arrayOf, node, oneOfType, string } from 'prop-types';
 import { NavLink as RouterNavLink } from 'react-router-dom';
 import clsx from 'clsx';
 import classes from './NavLink.module.css';
 
-const resolveNavLinkClassName = ({ isActive }) => clsx(classes.root, isActive && classes.active);
+export type NavLinkProps = PropsWithChildren<{ to: string, name: string }>;
+type ResolveClassName = (props: { isActive: boolean }) => string;
 
-const NavLink = ({ to, name, children }) => (
+const resolveNavLinkClassName: ResolveClassName = ({ isActive }) => clsx(classes.root, isActive && classes.active);
+
+const NavLink: FunctionComponent<NavLinkProps> = ({ to, name, children }) => (
     <>
         <RouterNavLink to={to} className={resolveNavLinkClassName}>
             {name}

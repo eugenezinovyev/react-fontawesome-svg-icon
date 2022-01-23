@@ -1,11 +1,11 @@
-import React from 'react';
+import { VoidFunctionComponent } from 'react';
 import NavLink from './NavLink';
 import Anchor from './Anchor';
 import AnchorList from './AnchorList';
 import classes from './Navigation.module.css';
 
-const Navigation = () => (
-    <nav className={classes.root}>
+const Navigation: VoidFunctionComponent = () => (
+    <nav className={ classes.root }>
         <NavLink to="/" name="Home"/>
         <NavLink to="/features" name="Features">
             <AnchorList>

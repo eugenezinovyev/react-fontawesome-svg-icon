@@ -11,7 +11,10 @@ module.exports = (env, argv) => {
     return {
         mode: isProduction ? 'production' : 'development',
         entry: {
-            main: './src/index.js',
+            main: './src/index.tsx',
+        },
+        resolve: {
+            extensions: ['.ts', '.tsx', '...'],
         },
         optimization: {
             minimize: isProduction,
@@ -58,6 +61,25 @@ module.exports = (env, argv) => {
         ].filter(Boolean),
         module: {
             rules: [
+                {
+                    test: /\.(ts|tsx)$/i,
+                    resourceQuery: { not: /raw/ },
+                    use: [
+                        {
+                            loader: 'babel-loader',
+                            options: {
+                                presets: [
+                                    require.resolve('@babel/preset-env'),
+                                    [require.resolve('@babel/preset-react'), { runtime: 'automatic' }],
+                                ],
+                            },
+                        },
+                        {
+                            loader: 'ts-loader'
+                        }
+                    ],
+                    exclude: [ '/node_modules/' ],
+                },
                 {
                     test: /\.(js|jsx)$/i,
                     resourceQuery: { not: /raw/ },

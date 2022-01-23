@@ -1,14 +1,14 @@
-import React from 'react';
+import { VoidFunctionComponent } from 'react';
 import Example from '../../../components/Example';
 import CodeHighlight from '../../../components/CodeHighlight';
 import PullExample from './PullExample';
 import PullExampleRaw from './PullExample?raw';
 
-const Pull = () => (
+const Pull: VoidFunctionComponent = () => (
     <Example id="pull-and-border" title="Pulled & Bordered Icons">
-        <PullExample />
+        <PullExample/>
         <CodeHighlight>
-            {PullExampleRaw}
+            { PullExampleRaw }
         </CodeHighlight>
     </Example>
 );
