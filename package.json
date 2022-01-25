@@ -4,6 +4,7 @@
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "scripts": {
     "prepare": "npx crlf --set=LF node_modules/.bin/webpack-bundle-diff",
     "build": "yarn workspaces run build",
@@ -11,7 +12,7 @@
     "postbuild": "cpy packages/readme/dist/README.md packages/react-fontawesome-svg-icon/ & cpy packages/readme/dist/README.md ./",
     "test": "yarn workspace react-fontawesome-svg-icon run test",
     "lint": "yarn workspaces run lint",
-    "version:update": "lerna version --no-push",
+    "version:update": "node scripts/version.js",
     "syncpack:mismatches": "syncpack list-mismatches"
   },
   "workspaces": [
@@ -30,7 +31,7 @@
     "filesize": "^8.0.6",
     "fs-extra": "^10.0.0",
     "gzip-size": "^7.0.0",
-    "lerna": "^4.0.0",
+    "promptly": "^3.2.0",
     "syncpack": "^6.2.0"
   },
   "repository": {
