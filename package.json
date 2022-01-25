@@ -6,15 +6,18 @@
   "private": true,
   "scripts": {
     "prepare": "npx crlf --set=LF node_modules/.bin/webpack-bundle-diff",
-    "build": "lerna run build --stream",
+    "build": "yarn workspaces run build",
+    "start": "yarn workspace @react-fontawesome-svg-icon/docs run start",
     "postbuild": "cpy packages/readme/dist/README.md packages/react-fontawesome-svg-icon/ & cpy packages/readme/dist/README.md ./",
-    "test": "lerna run test --stream",
-    "lint": "lerna run lint --stream",
+    "test": "yarn workspace react-fontawesome-svg-icon run test",
+    "lint": "yarn workspaces run lint",
     "version:update": "lerna version --no-push",
     "syncpack:mismatches": "syncpack list-mismatches"
   },
   "workspaces": [
-    "packages/*"
+    "packages/react-fontawesome-svg-icon",
+    "packages/readme",
+    "packages/docs"
   ],
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.9.1",
