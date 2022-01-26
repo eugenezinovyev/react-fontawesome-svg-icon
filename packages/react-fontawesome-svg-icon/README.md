@@ -101,14 +101,14 @@ Not supported yet:
 A simple React application with `react-fontawesome-svg-icon` bundle compared to a similar application with `@fortawesome/react-fontawesome` bundle.
 
 Baseline:
-* main.js 162.74 kB (52.82 kB gzipped)
+* main.js 162.75 kB (52.82 kB gzipped)
 * main.css 619 B (372 B gzipped)
 
 Comparison:
-* main.js 131.57 kB (43.1 kB gzipped)
+* main.js 131.58 kB (43.1 kB gzipped)
 * main.css 6.79 kB (1.71 kB gzipped)
 
-## main (-24,996 bytes)
+## main (-24,995 bytes)
 
 || Module | Count | Size |
 |-|-|-|-|
