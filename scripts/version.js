@@ -1,61 +1,17 @@
-import { exec } from 'child_process';
-import { join } from 'path';
-import { readFile } from 'fs/promises';
 import promptly from 'promptly';
-import packageResolve from './package-resolve.js';
+import execAsync from './exec-async.js';
+import collectWorkspaceInfo from './collect-workspace-info.js';
 
-const logger = {
-    log(...args) {
-        console.log(...args);
-    }
-};
+const workspaceInfo = await collectWorkspaceInfo();
+const workspaces = Object.keys(workspaceInfo.workspaces);
 
-function execAsync(command) {
-    return new Promise((resolve, reject) => {
-        exec(command, (err, stdout, stderr) => {
-            if (err) {
-                reject(err);
-                return;
-            }
-
-            if (stderr !== '') {
-                reject(new Error(stderr));
-                return;
-            }
-
-
-            resolve(stdout);
-        });
-
-    });
-}
-
-function getWorkspacesInfo() {
-    return execAsync('yarn workspaces info').then(stdout => JSON.parse(stdout));
-}
-
-function setWorkspaceVersion(workspace, version) {
-    return execAsync(`yarn workspace ${workspace} version --no-git-tag-version --new-version ${version}`);
-}
-
-function readVersion(packagePath) {
-    return readFile(join(packageResolve(packagePath), 'package.json'), { encoding: 'utf8' })
-        .then(text => JSON.parse(text))
-        .then(json => json.version);
-}
-
-const currentVersion = await readVersion('.');
-const workspacesInfo = await getWorkspacesInfo();
-const workspaces = Object.keys(workspacesInfo);
-
-logger.log('Current version is', currentVersion);
-await Promise.all(workspaces.map((workspace) => readVersion(workspacesInfo[workspace].location).then(version => ({ workspace, version }))))
-    .then(versions => versions.forEach(({ workspace, version }) => {
-        logger.log(`  ${workspace} ${version}`);
-    }));
+console.log('Current version is', workspaceInfo.version);
+workspaces.forEach((workspace) => {
+    console.log(`  ${workspace} ${workspaceInfo.workspaces[workspace].version}`);
+});
 
 const newVersion = await promptly.prompt('New version: ');
 await Promise.all([
-    ...workspaces.map(workspace => setWorkspaceVersion(workspace, newVersion)),
+    ...workspaces.map(workspace => execAsync(`yarn workspace ${workspace} version --no-git-tag-version --new-version ${newVersion}`)),
     execAsync(`yarn version --no-git-tag-version --new-version ${newVersion}`)
 ]);
