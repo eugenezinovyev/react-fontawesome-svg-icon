@@ -1,11 +1,8 @@
 import { exec } from 'child_process';
-import { fileURLToPath } from 'url';
-import { dirname, join, resolve } from 'path';
+import { join } from 'path';
 import { readFile } from 'fs/promises';
 import promptly from 'promptly';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import packageResolve from './package-resolve.js';
 
 const logger = {
     log(...args) {
@@ -39,10 +36,6 @@ function getWorkspacesInfo() {
 
 function setWorkspaceVersion(workspace, version) {
     return execAsync(`yarn workspace ${workspace} version --no-git-tag-version --new-version ${version}`);
-}
-
-function packageResolve(path) {
-    return resolve(__dirname, '..', path);
 }
 
 function readVersion(packagePath) {
