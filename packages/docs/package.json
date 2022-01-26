@@ -1,6 +1,7 @@
 {
   "name": "@react-fontawesome-svg-icon/docs",
   "version": "1.1.0",
+  "type": "module",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -11,6 +12,7 @@
     "clsx": "^1.1.1",
     "prismjs": "^1.26.0",
     "react": "^17.0.2",
+    "react-app-polyfill": "^3.0.0",
     "react-dom": "^17.0.2",
     "react-fontawesome-svg-icon": "^1.1.0",
     "react-markdown": "^7.1.2",
@@ -48,29 +50,10 @@
     "build": "webpack --mode=production --node-env=production",
     "lint": "eslint --ext ts,tsx src"
   },
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      [
-        "@babel/preset-react",
-        {
-          "runtime": "automatic"
-        }
-      ]
-    ],
-    "plugins": [
-      [
-        "prismjs",
-        {
-          "languages": [
-            "jsx",
-            "tsx",
-            "shell"
-          ],
-          "theme": "default",
-          "css": true
-        }
-      ]
-    ]
-  }
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ]
 }

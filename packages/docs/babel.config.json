@@ -1,0 +1,19 @@
+{
+  "presets": [
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    [
+      "prismjs",
+      {
+        "languages": [
+          "jsx",
+          "tsx",
+          "shell"
+        ],
+        "theme": "default",
+        "css": true
+      }
+    ]
+  ]
+}

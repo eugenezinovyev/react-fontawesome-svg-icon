@@ -1,11 +1,15 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+import path, { dirname } from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
+import { fileURLToPath } from 'url';
 
-module.exports = (env, argv) => {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export default (env, argv) => {
     const isProduction = argv.mode === 'production';
 
     return {
@@ -14,7 +18,7 @@ module.exports = (env, argv) => {
             main: './src/index.tsx',
         },
         resolve: {
-            extensions: ['.ts', '.tsx', '...'],
+            extensions: [ '.ts', '.tsx', '...' ],
         },
         optimization: {
             minimize: isProduction,
@@ -26,6 +30,9 @@ module.exports = (env, argv) => {
         output: {
             path: path.resolve('./dist'),
             clean: true,
+            environment: {
+                arrowFunction: false,
+            },
         },
         devServer: {
             open: true,
@@ -64,35 +71,14 @@ module.exports = (env, argv) => {
                 {
                     test: /\.(ts|tsx)$/i,
                     resourceQuery: { not: /raw/ },
-                    use: [
-                        {
-                            loader: 'babel-loader',
-                            options: {
-                                presets: [
-                                    require.resolve('@babel/preset-env'),
-                                    [require.resolve('@babel/preset-react'), { runtime: 'automatic' }],
-                                ],
-                            },
-                        },
-                        {
-                            loader: 'ts-loader'
-                        }
-                    ],
+                    use: [ 'babel-loader', 'ts-loader' ],
                     exclude: [ '/node_modules/' ],
                 },
                 {
-                    test: /\.(js|jsx)$/i,
+                    test: /\.m?js$/i,
                     resourceQuery: { not: /raw/ },
-                    use: {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: [
-                                require.resolve('@babel/preset-env'),
-                                [require.resolve('@babel/preset-react'), { runtime: 'automatic' }],
-                            ],
-                        },
-                    },
-                    exclude: [ '/node_modules/' ],
+                    use: 'babel-loader',
+                    exclude: /node_modules[\\/](?!(react-router-dom|react-router|react-markdown|vfile|vfile-message|unified|trough|remark-parse|mdast-util-from-markdown|mdast-util-to-hast|mdast-util-to-string|mdast-util-gfm-autolink-literal|mdast-util-find-and-replace|mdast-util-gfm-footnote|mdast-util-to-markdown|mdast-util-gfm-table|markdown-table|uvu|dequal|kleur|micromark|micromark-core-commonmark|micromark-extension-gfm-autolink-literal|micromark-extension-gfm-footnote|micromark-extension-gfm-strikethrough|micromark-extension-gfm-table|micromark-extension-gfm-tagfilter|micromark-extension-gfm-task-list-item|debug|remark-gfm|remark-rehype|unist-util-is|property-information)[\\/])/,
                 },
                 {
                     test: /\.css$/i,
