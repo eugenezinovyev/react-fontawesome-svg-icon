@@ -38,7 +38,7 @@ const components: Components = {
 const plugins: PluggableList = [remarkGfm];
 
 const Home: VoidFunctionComponent = () => (
-    <ReactMarkdown components={ components } plugins={ plugins } linkTarget={ transformLinkTarget }>
+    <ReactMarkdown components={ components } remarkPlugins={ plugins } linkTarget={ transformLinkTarget }>
         { homeContent }
     </ReactMarkdown>
 );
