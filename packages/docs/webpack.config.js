@@ -4,6 +4,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -18,7 +19,7 @@ export default (env, argv) => {
             main: './src/index.tsx',
         },
         resolve: {
-            extensions: [ '.ts', '.tsx', '...' ],
+            extensions: [ '.ts', '.tsx', '.jsx', '...' ],
         },
         optimization: {
             minimize: isProduction,
@@ -26,9 +27,39 @@ export default (env, argv) => {
                 '...',
                 new CssMinimizerPlugin(),
             ],
+            splitChunks: {
+                chunks: 'all',
+                minSize: 20000,
+                minRemainingSize: 0,
+                minChunks: 1,
+                maxAsyncRequests: 30,
+                maxInitialRequests: 30,
+                enforceSizeThreshold: 50000,
+                cacheGroups: {
+                    defaultVendors: {
+                        test: /[\\/]node_modules[\\/]/,
+                        priority: -10,
+                        reuseExistingChunk: true,
+                    },
+                    default: {
+                        minChunks: 2,
+                        priority: -20,
+                        reuseExistingChunk: true,
+                    },
+                    polyfills: {
+                        test: /[\\/]node_modules[\\/](@babel|core-js|regenerator-runtime)[\\/]/,
+                        name: 'polyfills',
+                        chunks: 'initial',
+                        priority: 60,
+                        enforce: true,
+                        reuseExistingChunk: true
+                    }
+                },
+            },
         },
         output: {
             path: path.resolve('./dist'),
+            filename: '[name].[contenthash].js',
             clean: true,
             environment: {
                 arrowFunction: false,
@@ -64,7 +95,8 @@ export default (env, argv) => {
                 patterns: [
                     { from: 'public' },
                 ],
-            })
+            }),
+            argv.analyze && new BundleAnalyzerPlugin(),
         ].filter(Boolean),
         module: {
             rules: [
@@ -75,10 +107,16 @@ export default (env, argv) => {
                     exclude: [ '/node_modules/' ],
                 },
                 {
+                    test: /\.(jsx)$/i,
+                    resourceQuery: { not: /raw/ },
+                    use: [ 'babel-loader' ],
+                    exclude: [ '/node_modules/' ],
+                },
+                {
                     test: /\.m?js$/i,
                     resourceQuery: { not: /raw/ },
                     use: 'babel-loader',
-                    exclude: /node_modules[\\/](?!(react-router-dom|react-router|react-markdown|vfile|vfile-message|unified|trough|remark-parse|mdast-util-from-markdown|mdast-util-to-hast|mdast-util-to-string|mdast-util-gfm-autolink-literal|mdast-util-find-and-replace|mdast-util-gfm-footnote|mdast-util-to-markdown|mdast-util-gfm-table|markdown-table|uvu|dequal|kleur|micromark|micromark-core-commonmark|micromark-extension-gfm-autolink-literal|micromark-extension-gfm-footnote|micromark-extension-gfm-strikethrough|micromark-extension-gfm-table|micromark-extension-gfm-tagfilter|micromark-extension-gfm-task-list-item|debug|remark-gfm|remark-rehype|unist-util-is|property-information)[\\/])/,
+                    exclude: /node_modules[\\/](?!(react-router-dom|react-router)[\\/])/,
                 },
                 {
                     test: /\.css$/i,
@@ -109,6 +147,10 @@ export default (env, argv) => {
                 {
                     resourceQuery: /raw/,
                     type: 'asset/source',
+                },
+                {
+                    resourceQuery: /resource/,
+                    type: 'asset/resource',
                 }
             ],
         }

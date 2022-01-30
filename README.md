@@ -101,14 +101,14 @@ Not supported yet:
 A simple React application with `react-fontawesome-svg-icon` bundle compared to a similar application with `@fortawesome/react-fontawesome` bundle.
 
 Baseline:
-* main.js 163.44 kB (53.11 kB gzipped)
+* main.js 163.44 kB (53.1 kB gzipped)
 * main.css 619 B (372 B gzipped)
 
 Comparison:
 * main.js 131.58 kB (43.1 kB gzipped)
 * main.css 6.79 kB (1.71 kB gzipped)
 
-## main (-25,688 bytes)
+## main (-25,686 bytes)
 
 || Module | Count | Size |
 |-|-|-|-|
@@ -116,7 +116,7 @@ Comparison:
 |+|css ../../../../../node_modules/css-loader/dist/cjs.js!../../../../../node_modules/@fortawesome/fontawesome-svg-core/styles.css|1|+7,891|
 |-|../../../../../node_modules/@fortawesome/react-fontawesome/index.es.js|5|-91,949|
 |-|../../../../../node_modules/@fortawesome/fontawesome-svg-core/index.es.js|1|-76,794|
-|-|../../../../../node_modules/prop-types/index.js|3|-2,663|
+|-|../../../../../node_modules/@fortawesome/react-fontawesome/node_modules/prop-types/index.js|3|-2,663|
 |-|webpack/runtime/compat get default export|1|-267|
 |-|webpack/runtime/define property getters|1|-308|
 |-|webpack/runtime/global|1|-221|

@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Container from './Container';
 import Heading from './Heading';
 import Navigation from './navigation/Navigation';
-import icon from '../../../../icon.svg';
+import icon from '../../../../icon.svg?resource';
 
 import classes from './Layout.module.css';
 

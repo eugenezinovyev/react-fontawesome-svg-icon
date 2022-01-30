@@ -19,7 +19,7 @@
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    "./types/raw.d.ts",
+    "./types/asset-modules.d.ts",
     "./types/css.d.ts",
     "./types/images.d.ts",
     "./src/index.tsx"
