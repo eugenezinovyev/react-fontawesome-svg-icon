@@ -7,7 +7,7 @@
     "svg icon",
     "icon"
   ],
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A minimal React component for Fontawesome SVG icon.",
   "main": "./lib/index.js",
   "module": "./lib/index.esm.js",
@@ -17,7 +17,9 @@
   "scripts": {
     "build": "rollup -c",
     "test": "jest",
-    "lint": "eslint src/*"
+    "lint": "eslint src/*",
+    "prepack": "cp ../../CHANGELOG.md .",
+    "postpack": "rm ./CHANGELOG.md"
   },
   "peerDependencies": {
     "react": "^17.0.2"

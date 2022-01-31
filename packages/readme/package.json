@@ -1,6 +1,6 @@
 {
   "name": "@react-fontawesome-svg-icon/readme",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "main": "dist/README.md",
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",

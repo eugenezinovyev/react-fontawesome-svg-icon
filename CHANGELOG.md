@@ -7,6 +7,30 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.1.1] - 2022-01-31
+### Added
+- 17.x Node version build.
+- IE11 support for the documentation application.
+- Linting for the readme built scripts.
+- Custom scripts to replace lerna because it is unmaintained.
+
+### Changed
+- Readme integrated into the documentation application prebuilt now to remove react-markdown dependency from runtime.
+- Documentation application moved to Typescript.
+- ESLint configuration for the documentation application to support automatic runtime.
+- Webpack configuration moved to ESM.
+- Documentation application split into chunks to let them load in parallel.
+- Consolidated dependencies versions.
+
+### Removed
+- 12.x Node version build.
+- "react-markdown" dependency.
+- Removed redundant files.
+- Removed "lerna" dependency.
+
+### Fixed
+- Type of the FontAwesomeSvgIcon component to support ref forwarding in Typescript based applications.
+
 ## [1.1.0] - 2022-01-17
 ### Added
 - SVG symbols support.
@@ -64,7 +88,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Readme sections and comparison applications to build an up-to-date README file.
 - Feature comparison application to let compare implemented functionality with the official package.
 
-[Unreleased]: https://github.com/eugenezinovyev/react-fontawesome-svg-icon/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/eugenezinovyev/react-fontawesome-svg-icon/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/eugenezinovyev/react-fontawesome-svg-icon/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/eugenezinovyev/react-fontawesome-svg-icon/compare/v1.0.5...v1.1.0
 [1.0.5]: https://github.com/eugenezinovyev/react-fontawesome-svg-icon/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/eugenezinovyev/react-fontawesome-svg-icon/compare/v1.0.3...v1.0.4
