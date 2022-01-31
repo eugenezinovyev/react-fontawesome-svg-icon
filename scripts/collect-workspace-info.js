@@ -3,8 +3,12 @@ import { readFile } from 'fs/promises';
 import { join } from 'path';
 import packageResolve from './package-resolve.js';
 
+function cleanupJSONLeft(jsonString) {
+    return jsonString.replace(/^[^{]*/, '');
+}
+
 function getWorkspacesInfo() {
-    return execAsync('yarn workspaces info').then(stdout => JSON.parse(stdout));
+    return execAsync('yarn workspaces info').then(stdout => JSON.parse(cleanupJSONLeft(stdout)));
 }
 
 function readPackageJson(packagePath) {
