@@ -4,7 +4,6 @@ import {
     CSSProperties,
     ForwardedRef,
     forwardRef,
-    ForwardRefExoticComponent,
     ForwardRefRenderFunction,
     SVGAttributes,
 } from 'react';
@@ -146,6 +145,6 @@ const renderFunction: FontAwesomeSvgIconRenderFunction = (props: FontAwesomeSvgI
 /**
  * FontAwesome SVG icon component.
  * */
-export const FontAwesomeSvgIcon: ForwardRefExoticComponent<FontAwesomeSvgIconProps> = forwardRef(renderFunction);
+export const FontAwesomeSvgIcon = forwardRef<SVGSVGElement, FontAwesomeSvgIconProps>(renderFunction);
 
 FontAwesomeSvgIcon.displayName = 'FontAwesomeSvgIcon';
