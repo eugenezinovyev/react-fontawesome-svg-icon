@@ -1,8 +1,8 @@
-import { VoidFunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faSkating, faSkiing, faSkiingNordic, faSnowboarding, faSnowplow } from '@fortawesome/free-solid-svg-icons';
 
-const Example: VoidFunctionComponent = () => (
+const Example: FunctionComponent = () => (
     <div style={ { fontSize: '1.25rem' } }>
         <div><FontAwesomeSvgIcon fixedWidth icon={ faSkating } style={ { background: 'DodgerBlue' } }/> Skating</div>
         <div><FontAwesomeSvgIcon fixedWidth icon={ faSkiing } style={ { background: 'SkyBlue' } }/> Skiing</div>

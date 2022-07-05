@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState, VoidFunctionComponent } from 'react';
+import { useEffect, useRef, useState, FunctionComponent } from 'react';
 import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 type Size = { width: number, height: number } | null;
 
-const Example: VoidFunctionComponent = () => {
+const Example: FunctionComponent = () => {
     const [size, setSize] = useState<Size>(null);
     const ref = useRef<SVGSVGElement>(null);
 

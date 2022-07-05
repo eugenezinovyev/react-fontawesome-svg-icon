@@ -1,15 +1,15 @@
-import { FunctionComponent } from 'react';
-import { arrayOf, node, oneOfType } from 'prop-types';
+import { FunctionComponent, PropsWithChildren } from 'react';
+import { arrayOf, element, oneOfType } from 'prop-types';
 import classes from './AnchorList.module.css';
 
-const AnchorList: FunctionComponent = ({ children }) => (
+const AnchorList: FunctionComponent<PropsWithChildren> = ({ children }) => (
     <div className={ classes.root }>
         { children }
     </div>
 );
 
 AnchorList.propTypes = {
-    children: oneOfType([node, arrayOf(node)]),
+    children: oneOfType([element, arrayOf(element)]),
 };
 
 AnchorList.defaultProps = {

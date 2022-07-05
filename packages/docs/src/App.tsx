@@ -1,10 +1,10 @@
-import { VoidFunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './layout/Layout';
 import Readme from './pages/home/Readme';
 import Features from './pages/features/Features';
 
-const App: VoidFunctionComponent = () => (
+const App: FunctionComponent = () => (
     <BrowserRouter>
         <Routes>
             <Route path="/" element={ <Layout/> }>

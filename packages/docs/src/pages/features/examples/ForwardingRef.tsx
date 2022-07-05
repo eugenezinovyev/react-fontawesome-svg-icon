@@ -1,10 +1,10 @@
-import { VoidFunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import Example from '../../../components/Example';
 import CodeHighlight from '../../../components/CodeHighlight';
 import ForwardingRefExample from './ForwardingRefExample';
 import ForwardingRefExampleRaw from './ForwardingRefExample?raw';
 
-const ForwardingRef: VoidFunctionComponent = () => (
+const ForwardingRef: FunctionComponent = () => (
     <Example id="ref-forwarding" title="Forwarding Ref">
         <ForwardingRefExample/>
         <CodeHighlight>

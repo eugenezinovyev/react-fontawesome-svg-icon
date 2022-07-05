@@ -1,5 +1,5 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
-import { arrayOf, node, oneOfType, string } from 'prop-types';
+import { arrayOf, element, oneOfType, string } from 'prop-types';
 import { NavLink as RouterNavLink } from 'react-router-dom';
 import clsx from 'clsx';
 import classes from './NavLink.module.css';
@@ -21,7 +21,7 @@ const NavLink: FunctionComponent<NavLinkProps> = ({ to, name, children }) => (
 NavLink.propTypes = {
     to: string.isRequired,
     name: string.isRequired,
-    children: oneOfType([ node, arrayOf(node)]),
+    children: oneOfType([ element, arrayOf(element)]),
 };
 
 NavLink.defaultProps = {

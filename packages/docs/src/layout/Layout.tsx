@@ -1,4 +1,4 @@
-import { VoidFunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { Outlet } from 'react-router-dom';
 import Container from './Container';
 import Heading from './Heading';
@@ -7,7 +7,7 @@ import icon from '../../../../icon.svg?resource';
 
 import classes from './Layout.module.css';
 
-const Layout: VoidFunctionComponent = () => (
+const Layout: FunctionComponent = () => (
     <div className={ classes.root }>
         <div className={ classes.navBarOutlet }>
             <div className={ classes.navBar }>
