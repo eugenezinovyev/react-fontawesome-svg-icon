@@ -9,7 +9,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@react-fontawesome-svg-icon/readme": "1.1.1",
-    "clsx": "^1.2.0",
+    "clsx": "^1.2.1",
     "prismjs": "^1.28.0",
     "react": "^18.2.0",
     "react-app-polyfill": "^3.0.0",
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@types/prismjs": "^1.26.0",
-    "@types/react": "^18.0.14",
+    "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@types/react-router-hash-link": "^2.4.5",
     "babel-plugin-prismjs": "^2.1.0",
