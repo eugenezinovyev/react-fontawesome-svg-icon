@@ -1,4 +1,4 @@
-import { VoidFunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { faCalendar as fasCalendar, faCoffee, faHeart, faSnowboarding } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar as farCalendar } from '@fortawesome/free-regular-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -54,7 +54,7 @@ const tabIndex: Sample[] = [
 const swapOpacity: Sample[] = [{ icon: faCoffee, size: 'lg', swapOpacity: true }];
 const inverse: Sample[] = [{ icon: faCoffee, size: 'lg', inverse: true }];
 
-const Features: VoidFunctionComponent = () => {
+const Features: FunctionComponent = () => {
     return (
         <>
             <GenericSamplesExample id="families" title="Icon Families" samples={ families }/>

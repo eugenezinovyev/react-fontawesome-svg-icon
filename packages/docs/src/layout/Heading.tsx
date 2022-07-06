@@ -1,9 +1,9 @@
-import { VoidFunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
 import classes from './Heading.module.css';
 
-const Heading: VoidFunctionComponent = () => (
+const Heading: FunctionComponent = () => (
     <header className={ classes.root }>
         <h1 className={ classes.title }>React FontAwesome SVG Icon</h1>
         <div className={ classes.links }>

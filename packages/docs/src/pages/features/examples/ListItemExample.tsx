@@ -1,8 +1,8 @@
-import { VoidFunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { FontAwesomeSvgIcon } from 'react-fontawesome-svg-icon';
 import { faCoffee, faHeart } from '@fortawesome/free-solid-svg-icons';
 
-const Example: VoidFunctionComponent = () => (
+const Example: FunctionComponent = () => (
     <>
         <ul className="fa-ul">
             <li><FontAwesomeSvgIcon icon={ faCoffee } size="lg" listItem/> Coffee</li>

@@ -1,5 +1,5 @@
 import { FunctionComponent, PropsWithChildren, useEffect, useRef } from 'react';
-import { arrayOf, node, oneOfType, string } from 'prop-types';
+import { string } from 'prop-types';
 import Prism from 'prismjs';
 import classes from './CodeHighlight.module.css';
 
@@ -24,7 +24,7 @@ const CodeHighlight: FunctionComponent<CodeHighlightProps> = ({ children, langua
 };
 
 CodeHighlight.propTypes = {
-    children: oneOfType([node, arrayOf(node)]).isRequired,
+    children: string.isRequired,
     language: string,
 };
 

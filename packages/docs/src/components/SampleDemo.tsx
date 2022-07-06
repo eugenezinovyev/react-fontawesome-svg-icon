@@ -1,4 +1,4 @@
-import { VoidFunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import clsx from 'clsx';
 import Samples, { Sample } from './Samples';
 import CodeHighlight from './CodeHighlight';
@@ -81,7 +81,7 @@ export default Example;
 export type SampleDemoClasses = { root?: string, samples?: string };
 export type SampleDemoProps = { className?: string, classes?: SampleDemoClasses, samples: Sample[] };
 
-const SampleDemo: VoidFunctionComponent<SampleDemoProps> = ({ className, classes: passedClasses, samples }) => (
+const SampleDemo: FunctionComponent<SampleDemoProps> = ({ className, classes: passedClasses, samples }) => (
     <div className={ clsx(classes.root, passedClasses?.root, className) }>
         <Samples samples={ samples } className={ passedClasses?.samples }/>
         <CodeHighlight>

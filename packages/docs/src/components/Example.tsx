@@ -1,5 +1,5 @@
 import { FunctionComponent, PropsWithChildren } from 'react';
-import { arrayOf, node, oneOfType, string } from 'prop-types';
+import { arrayOf, element, oneOfType, string } from 'prop-types';
 import clsx from 'clsx';
 import classes from './Example.module.css';
 
@@ -16,7 +16,7 @@ Example.propTypes = {
     className: string,
     id: string.isRequired,
     title: string.isRequired,
-    children: oneOfType([node, arrayOf(node)]).isRequired,
+    children: oneOfType([element, arrayOf(element)]).isRequired,
 };
 
 export default Example;

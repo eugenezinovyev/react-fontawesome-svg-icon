@@ -2,7 +2,6 @@ import path, { dirname } from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
-import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { fileURLToPath } from 'url';
@@ -73,27 +72,12 @@ export default (env, argv) => {
         plugins: [
             new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src/index.html') }),
             new MiniCssExtractPlugin(),
-            new FaviconsWebpackPlugin({
-                logo: path.resolve(__dirname, '../../icon.svg'),
-                mode: 'webapp',
-                devMode: 'webapp',
-                prefix: '',
-                favicons: {
-                    icons: {
-                        android: false,
-                        appleIcon: false,
-                        appleStartup: false,
-                        coast: false,
-                        favicons: true,
-                        firefox: false,
-                        windows: false,
-                        yandex: false,
-                    },
-                },
-            }),
             new CopyPlugin({
                 patterns: [
                     { from: 'public' },
+                    path.resolve(__dirname, '../../icon-16x16.png'),
+                    path.resolve(__dirname, '../../icon-32x32.png'),
+                    path.resolve(__dirname, '../../icon-48x48.png'),
                 ],
             }),
             argv.analyze && new BundleAnalyzerPlugin(),
