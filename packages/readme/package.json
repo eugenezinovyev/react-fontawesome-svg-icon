@@ -1,6 +1,6 @@
 {
   "name": "@react-fontawesome-svg-icon/readme",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "type": "module",
   "main": "dist/README.md",
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
@@ -29,7 +29,7 @@
     "html-webpack-plugin": "^5.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-fontawesome-svg-icon": "1.1.1",
+    "react-fontawesome-svg-icon": "1.1.2",
     "style-loader": "^3.3.1",
     "webpack-bundle-diff": "^1.1.0"
   }
