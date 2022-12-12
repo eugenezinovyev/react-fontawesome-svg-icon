@@ -5,6 +5,7 @@
 [![minzip](https://badgen.net/bundlephobia/minzip/react-fontawesome-svg-icon)](https://bundlephobia.com/package/react-fontawesome-svg-icon)
 [![tree-shaking](https://badgen.net/bundlephobia/tree-shaking/react-fontawesome-svg-icon)](https://bundlephobia.com/package/react-fontawesome-svg-icon)
 [![codecov](https://codecov.io/gh/eugenezinovyev/react-fontawesome-svg-icon/branch/main/graph/badge.svg?token=5WGM492AXT)](https://codecov.io/gh/eugenezinovyev/react-fontawesome-svg-icon)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Feugenezinovyev%2Freact-fontawesome-svg-icon.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Feugenezinovyev%2Freact-fontawesome-svg-icon?ref=badge_shield)
 
 # Disclaimer
 
@@ -123,3 +124,7 @@ Comparison:
 |-|webpack/runtime/hasOwnProperty shorthand|1|-88|
 |△|*1 modules with minor changes*| |+58|
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Feugenezinovyev%2Freact-fontawesome-svg-icon.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Feugenezinovyev%2Freact-fontawesome-svg-icon?ref=badge_large)
