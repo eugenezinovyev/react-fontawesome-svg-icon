@@ -10,7 +10,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@react-fontawesome-svg-icon/readme": "1.1.2",
     "clsx": "^1.2.1",
-    "prismjs": "^1.28.0",
+    "prismjs": "^1.30.0",
     "react": "^18.2.0",
     "react-app-polyfill": "^3.0.0",
     "react-dom": "^18.2.0",
