@@ -16,7 +16,7 @@
     "react-dom": "^18.2.0",
     "react-fontawesome-svg-icon": "1.1.2",
     "react-router": "^6.3.0",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "^6.4.0",
     "react-router-hash-link": "^2.4.3"
   },
   "devDependencies": {
