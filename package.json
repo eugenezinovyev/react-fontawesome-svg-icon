@@ -5,6 +5,7 @@
   "license": "MIT",
   "private": true,
   "type": "module",
+  "sideEffects": false,
   "scripts": {
     "prepare": "npx crlf --set=LF node_modules/.bin/webpack-bundle-diff",
     "build": "node scripts/run.js build",
