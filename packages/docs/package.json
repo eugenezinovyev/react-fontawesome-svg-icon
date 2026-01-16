@@ -15,8 +15,8 @@
     "react-app-polyfill": "^3.0.0",
     "react-dom": "^18.2.0",
     "react-fontawesome-svg-icon": "1.1.2",
-    "react-router": "^6.3.0",
-    "react-router-dom": "^6.3.0",
+    "react-router": "^6.30.2",
+    "react-router-dom": "^6.30.2",
     "react-router-hash-link": "^2.4.3"
   },
   "devDependencies": {
